@@ -1,6 +1,6 @@
 # ALGORITHMS AND DATA STRUCTURES CLASS
 
-## BIG 0 NOTATION
+## BIG O NOTATION
 When writing code, there are measurements/standards that are usually considered to determine how efficient that piece of code is:
 
 * How fast is it? - time complexity
@@ -35,3 +35,29 @@ Auxiliary space complexity is the focus of Big O i.e. the amount of memory taken
 - The primitive types numbers, booleans, undefined and null occupy O(1) space.
 - The primitive type string, occupies O(n) space.
 - Reference types - arrays and objects - occupy O(n) space, where n is the length of an array, or the number of keys in an object respectively.
+
+### Analysing Performance of an Object
+Objects contain unordered fields stored in key-pair values. Operations performed on them generally have less time complexity than arrays.
+* Adding a property to an object requires constant time - O(1)
+* Removing a property requires constant time - O(1)
+* Retrieving a property requires constant time - O(1)
+* Searching for a property requires linear time - O(n)
+* Prototype methods (`Object.keys`, `Object.values`, `Object.entries`) require linear time
+* Prototype properties (such as `Object.hasOwnProperty`) require constant time.
+
+### Analysing Performance of an Array
+Arrays contain ordered items with indexes identifying the position of each item. Time complexity depends on the position of the item an operation is being performed on, in some cases. Arrays are best avoided if specific ordering of items in a list is not needed.
+* Adding and removing an item (`push()` and `pop()`) to the end of an array requires constant time - O(1)
+* Adding and removing (`shift(`) and `unshift()`) at the beginning or middle of an array requires linear time - O(n). This is because all the subsequent items in the array have to be re-indexed, and the number of operations it takes to do this grows in proportion with the length of the array.
+* Retrieving an item via indexing requires constant time - O(1)
+* Searching for an item requires linear time - O(n)
+* Other Array methods such as `slice()`, `splice()`, `concat() `and `forEach()`, `reduce()` etc all require linear time - O(n)
+* `sort()` on the other hand, requires logarithmic linear time - O(n log n), because apart from performing an operation on each array item, items also have to be moved around to different positions.
+
+## PROBLEM SOLVING
+An algorithm is simply a set of operations used to solve a problem. The following steps are useful for problem-solving:
+- Understand the problem
+- Explore concrete examples
+- Break it down
+- Solve and simplify
+- Look back and refactor
