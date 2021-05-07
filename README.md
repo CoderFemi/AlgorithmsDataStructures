@@ -54,10 +54,28 @@ Arrays contain ordered items with indexes identifying the position of each item.
 * Other Array methods such as `slice()`, `splice()`, `concat() `and `forEach()`, `reduce()` etc all require linear time - O(n)
 * `sort()` on the other hand, requires logarithmic linear time - O(n log n), because apart from performing an operation on each array item, items also have to be moved around to different positions.
 
-## PROBLEM SOLVING
+## PROBLEM SOLVING APPROACH
 An algorithm is simply a set of operations used to solve a problem. The following steps are useful for problem-solving:
 - Understand the problem
 - Explore concrete examples
 - Break it down
 - Solve and simplify
 - Look back and refactor
+
+1. Understand the Problem
+    a. Restate it in your own words, for better understanding.
+    b. What inputs should go into the problem.
+    c. What outputs should be derived from the solution.
+    d. label different parts of the solution
+2. Explore concrete examples
+    - Draft a rough example of what the function should look like, with a function name, possible inputs and outputs, considering their types as well.
+3. Break it down
+    - Divide the implementation into different logical parts, what variables should be defined, what mathematical operations should be performed, and what object should be returned from the function.
+4. Solve or Simplify
+    - Solve the problem by filling in all the different parts.
+5. Look Back and Refactor
+    - Look for better ways of implementing what you have done.
+
+## PROBLEM SOLVING PATTERNS
+- **Frequency Counters**: This is a pattern where objects and arrays are used to collect values and compare them. The efficient approach for this is to use two separate loops to loop over each array being compared. This would have linear time - O(n). The less efficient approach would be to use nested loops which would have a O(n^2) complexity - quadratic time.
+- **Multiple Pointers**: This pattern involves creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition. Useful for solving problems to derive minimal space complexity.
