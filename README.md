@@ -81,3 +81,15 @@ An algorithm is simply a set of operations used to solve a problem. The followin
 - **Multiple Pointers**: This pattern involves creating pointers or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition. Useful for solving problems to derive minimal space complexity.
 - **Sliding Window**: This pattern involves creating a window which could be an array, or a number from one position to another. The window increases and closes based on specified conditions, and another window created. This pattern is useful for keeping track of a subset of data in an array or string.
 - **Divide and Conquer**: This pattern involves dividing a dataset into different chunks and performing a defined operation on each one separately. This is a valuable pattern for decreasing time complexity considerably. For instance, doing a binary search using this pattern has a time complexity of O(log n) instead of using a loop to iterate and find the item which has O(n).
+
+## RECURSION
+`Recursion` is a function calling itself. Some methods such as JSON.parse, JSON.stringify, document.getElementById are recursive functions. Recursion is usually a better alternative to iteration. A recursive function has two essential parts:
+* The base case - The point at which the function stops calling itself.
+* The variable inputs - The different inputs which are passed into the function each time it is called.
+
+A `recursion helper method` is an outer function that wraps the recursive function. This makes it possible to create variables within the outer function scope that help the recursive function carry out its duty. For example, an array can be defined which the RF will use to collect items. Using a helper method is more straightforward and easier to understand than `pure recursion` that contains all its variables within its scope.
+
+When using the pure recursion approach, the strategy is to find a way to collect items by using methods such as 
+- slice, concat, or the spread operator to make copies of the collecting array before it is reset to an empty array. 
+- For strings, slice, substr or substring are used to make copies of the string, 
+- while for objects, Object.assign or the object spread operator is used.
