@@ -93,3 +93,10 @@ When using the pure recursion approach, the strategy is to find a way to collect
 - slice, concat, or the spread operator to make copies of the collecting array before it is reset to an empty array. 
 - For strings, slice, substr or substring are used to make copies of the string, 
 - while for objects, Object.assign or the object spread operator is used.
+
+## SEARCHING ALGORITHMS
+### Linear Search
+Javascript has inbuilt methods for searching arrays such as `indexOf()`, `includes()`, `find()`, `findIndex()`, and these are implemented behind the scenes by looping through the array one item at a time till a match is found. This type of search is called a linear search and is most suitable for when the items in the array are not sorted in any particular order. As the name implies, it has linear time complexity - O(n).
+
+### Binary Search
+Binary search is much faster than linear search, because instead of eliminating one item at a time through a loop, half of the data being searched is eliminated at a time. If the item being searched for is projected not to be in a particular half, that half is eliminated, and the remaining half is further divided into two, until a match is found, or not. This uses the *Divide and Conquer* algorithm pattern. Binary search is applicable only for sorted arrays. It has a time complexity of O(log n), or best case, O(1), if the item is found on the first loop. **O(log n) means that as the size of the array (which is `n`) doubles, the number of operations required for the search only increases by one**: a logarithmic relationship. If the length of the array is 16, 4 operations would be required. When it doubles to 32, 5 operations (one more) are needed. Therefore, in base 2, log 16 = 4 and log 32 = 5.
