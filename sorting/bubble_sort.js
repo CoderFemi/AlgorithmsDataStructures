@@ -1,5 +1,5 @@
 const bubbleSort = (arr) => {
-    let count = 0
+    // let count = 0
     for (let i = arr.length - 1; i > 0; i--) {
         let noSwap = true
         for (let j = 0; j < i - 1; j++) {
@@ -10,10 +10,10 @@ const bubbleSort = (arr) => {
                 noSwap = false
             }
         }
-        count++
+        // count++
         if (noSwap) break
     }
-    console.log(count)
+    // console.log(count)
     return arr
 }
 
