@@ -1,5 +1,7 @@
 # ALGORITHMS AND DATA STRUCTURES CLASS
 
+## ALGORITHMS
+
 ## BIG O NOTATION
 When writing code, there are measurements/standards that are usually considered to determine how efficient that piece of code is:
 
@@ -107,3 +109,4 @@ The in-built `sort()` method is available in Javascript, but we need to know how
 * **Selection Sort**: Selection sort functions by swapping the smallest items to the beginning of the array. It also uses a nested loop and has O(n^2) time complexity. It is more efficient than bubble sort, because it does not swap items during the iteration, only at the end of the iteration when a minimum value has been established.
 * **Insertion Sort**: Insertion sort gradually builds up a sorted portion of the array, taking an item from the unsorted portion and inserting it into its right place in the sorted portion. It also has O(n^2) time complexity. It is really efficient for use cases when the array is being updated with live data, and each new item needs to be sorted in place.
 The above three are referred to as the elementary sorting algorithms, and are more suitable for small datasets.
+* **Merge Sort**: Merge sort is implemented by splitting an array into two subarrays, and then sorting and merging the arrays together to return a single sorted array. This is done recursively. A helper function is used to do the merging. It has O(n log n) time complexity, which means its super faster than the elementary logarithms mentioned above. `As the size of n (array length) doubles, the number of array splits done increases by 1, that is O(log n). Then as the size of n grows, the number of comparisms done between the items (using the merge helper function) grows proportionally, that is O(n). Therefore both analyses combined together yields O(n log n).` It's suitable for large arrays. However, it takes up more space than the elementary sort algorithms - O(n).
