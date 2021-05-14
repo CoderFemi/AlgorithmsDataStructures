@@ -117,3 +117,7 @@ The in-built `sort()` method is available in Javascript, but we need to know how
 
 ### Non-comparisms Sorting Algorithms
 * **Radix Sort**: All the previous algorithms perform sorting operations by comparing one item to another. Radix sort does not do any comparisms, but rather repetitively groups numbers by the value and positions of each digit they contain.
+
+## DATA STRUCTURES
+Data structures are collections of values, the relationships among them, and the operations or methods that can be applied to that data. It is important to know how to define custom data structures, as the built-in ones may not be sufficient for data requirements.
+* **Singly-Linked Lists**: This is a list of items just like an array, but unlike an array, there is no indexing of the items. Each item is stored in a node, which is linked or points to the next item in the list. SLLs are defined with a head (first item) and a tail (last item), and also a length. Items cannot be accessed randomly (via indexing), getting, inserting or deleting a particular item involves looping through the list from the beginning. SLLs are mostly useful for very large datasets that do not need frequent random access, but do a lot of insertion and deletion tasks. Since there is no indexing, items do not have to be re-indexed every time. Insertion and deletion of items at the beginning of an array takes O(1) time complexity. This is basically the advantage an SSL has over the built-in Javascript array.
