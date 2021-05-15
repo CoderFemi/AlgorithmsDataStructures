@@ -120,5 +120,13 @@ The in-built `sort()` method is available in Javascript, but we need to know how
 
 ## DATA STRUCTURES
 Data structures are collections of values, the relationships among them, and the operations or methods that can be applied to that data. It is important to know how to define custom data structures, as the built-in ones may not be sufficient for data requirements.
+
+### Lists
 * **Singly-Linked Lists**: This is a list of items just like an array, but unlike an array, there is no indexing of the items. Each item is stored in a node, which is linked or points to the next item in the list. SLLs are defined with a head (first item) and a tail (last item), and also a length. Items cannot be accessed randomly (via indexing), getting, inserting or deleting a particular item involves looping through the list from the beginning. SLLs are mostly useful for very large datasets that do not need frequent random access, but do a lot of insertion and deletion tasks. Since there is no indexing, items do not have to be re-indexed every time. Insertion and deletion of items at the beginning of an array takes O(1) time complexity. This is basically the advantage an SSL has over the built-in Javascript array.
 * **Doubly-Linked Lists**: These are similiar to SLLs, but each node points to the previous item, as well as to the next item. This makes it faster to perform operations at the end of a list, as the loop can start from the end, as well as the beginning of the list. It uses up more memory than a SLL, but the benefits accrued are definitely huge. Searching with DLLs can be reduced to half the time, because searching is done starting from the beginning or the end depending on the position of the item. Such that O(n / 2), which essentially is still o(n).
+
+### Stacks and Queues
+These are different types of collection of data. A stack uses a LIFO structure, while a Queue uses a FIFO structure. 
+* Stacks are used to manage function invocations (the Javascript call stack), the history object in routing, and undo/redo actions are implemented with a stack. A basic, built-in implementation of a stack with an array is to use the methods push() and pop() to add to and remove items from the end of a stack. A linked list can be used to add to and remove items from the beginning of a stack.
+* Queues are used to manage print queues, background tasks. A queue is implemented with a Javascript array by using the unshift() and pop() methods to add items to the beginning of an array and remove them from the end. A singly linked list can be used to add items to the end of a stack (`enqueue`) and remove them from the beginning (`dequeue`).
+Adding and removing from stacks and queues which have been optimally defined, take O(1) - constant time.
