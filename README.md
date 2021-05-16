@@ -130,3 +130,15 @@ These are different types of collection of data. A stack uses a LIFO structure, 
 * Stacks are used to manage function invocations (the Javascript call stack), the history object in routing, and undo/redo actions are implemented with a stack. A basic, built-in implementation of a stack with an array is to use the methods push() and pop() to add to and remove items from the end of a stack. A linked list can be used to add to and remove items from the beginning of a stack.
 * Queues are used to manage print queues, background tasks. A queue is implemented with a Javascript array by using the unshift() and pop() methods to add items to the beginning of an array and remove them from the end. A singly linked list can be used to add items to the end of a stack (`enqueue`) and remove them from the beginning (`dequeue`).
 Adding and removing from stacks and queues which have been optimally defined, take O(1) - constant time.
+
+### Binary Search Tree
+Trees are a collection of nodes having a parent-child relationship. There is only one root, and there are no connections between sibling nodes, else it is not a tree. Tree terminology:
+    1. A root - The top node in a tree
+    2. A child
+    3. A parent
+    4. A sibling
+    5. A leaf - a node with no child.
+    6. An edge - the connection between two nodes.
+Trees have lots of use cases in programming: The HTML DOM, computer folder structuring, network routing etc.
+
+A binary search tree (BST) consists of nodes, for which each node can only have at most two children. BSTs contain data sorted in a particular order. Any node that has a lesser value than the parent node is located to the left, while the one with a higher value is located to the right. This makes searching for a particular value easier with binary search. Time complexity for a BST is O(log n); as the number of nodes double, the number of operations carried out increases by 1. However, if the tree is a one-sided tree, with each node having only one child, the worst case is O(n). In this situation, the advantage of using a tree is lost, and its better to use a list instead.
