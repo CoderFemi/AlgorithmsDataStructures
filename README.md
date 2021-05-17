@@ -132,7 +132,7 @@ These are different types of collection of data. A stack uses a LIFO structure, 
 Adding and removing from stacks and queues which have been optimally defined, take O(1) - constant time.
 
 ### Binary Search Tree
-Trees are a collection of nodes having a parent-child relationship. There is only one root, and there are no connections between sibling nodes, else it is not a tree. Tree terminology:
+Trees are non-linear data structures containing a collection of nodes having a parent-child relationship. There is only one root, and there are no connections between sibling nodes, else it is not a tree. Tree terminology:
     1. A root - The top node in a tree
     2. A child
     3. A parent
@@ -141,4 +141,13 @@ Trees are a collection of nodes having a parent-child relationship. There is onl
     6. An edge - the connection between two nodes.
 Trees have lots of use cases in programming: The HTML DOM, computer folder structuring, network routing etc.
 
-A binary search tree (BST) consists of nodes, for which each node can only have at most two children. BSTs contain data sorted in a particular order. Any node that has a lesser value than the parent node is located to the left, while the one with a higher value is located to the right. This makes searching for a particular value easier with binary search. Time complexity for a BST is O(log n); as the number of nodes double, the number of operations carried out increases by 1. However, if the tree is a one-sided tree, with each node having only one child, the worst case is O(n). In this situation, the advantage of using a tree is lost, and its better to use a list instead.
+A binary search tree (BST) consists of nodes, for which each node can only have at most two children. BSTs contain data sorted in a particular order (as opposed to regular binary trees whose data is not sorted in any particular order). Any node that has a lesser value than the parent node is located to the left, while the one with a higher value is located to the right. This makes searching for a particular value easier with binary search. Time complexity for a BST is O(log n); as the number of nodes double, the number of operations carried out increases by 1. However, if the tree is a one-sided tree, with each node having only one child, the worst case is O(n). In this situation, the advantage of using a tree is lost, and its better to use a list instead.
+
+Traversing a tree - moving from one node to another - can be done in a number of ways:
+1. Breadth First Search: Involves moving sideways and down through the tree. A queue is used to implement the logic, to keep track of the items being visited as the tree is being traversed, and an array returned to show the items in the order they were visited.
+2. Depth First Search
+    - Pre-Order: in a DFS pre-order, starting with the root, the left side of each node is visited first, before visiting the right side. This is accomplished with recursion. This is mostly useful for copying a tree for reconstruction later.
+    - Post-Order: Here the nodes are visited starting from the bottom left of the tree, and then traversing upwards to finish with the root.
+    - In-Order: Nodes are also visited starting from the bottom left, followed by the root, and then finishing up with the right side. This approach is useful for getting items from a Binary Search Tree in their exact order.
+
+BFS and DFS both have O(n) time complexity, but space complexity differs based on how wide or deep the tree is, which would determine the most efficient out of the two.
