@@ -147,7 +147,22 @@ Traversing a tree - moving from one node to another - can be done in a number of
 1. Breadth First Search: Involves moving sideways and down through the tree. A queue is used to implement the logic, to keep track of the items being visited as the tree is being traversed, and an array returned to show the items in the order they were visited.
 2. Depth First Search
     - Pre-Order: in a DFS pre-order, starting with the root, the left side of each node is visited first, before visiting the right side. This is accomplished with recursion. This is mostly useful for copying a tree for reconstruction later.
-    - Post-Order: Here the nodes are visited starting from the bottom left of the tree, and then traversing upwards to finish with the root.
-    - In-Order: Nodes are also visited starting from the bottom left, followed by the root, and then finishing up with the right side. This approach is useful for getting items from a Binary Search Tree in their exact order.
+    - Post-Order: Here the nodes are visited starting from the bottom left of the tree, then right, and then traversing upwards to finish with the root.
+    - In-Order: Nodes are visited starting from the bottom left, followed by the root, and then finishing up with the right side. This approach is useful for getting items from a Binary Search Tree in their exact order.
 
 BFS and DFS both have O(n) time complexity, but space complexity differs based on how wide or deep the tree is, which would determine the most efficient out of the two.
+
+### Binary Heaps
+These are similar to trees but with a few different characteristics. In a binary heap, all the left child nodes are filled out first, before the right ones, and it is as compact as possible. Binary heaps are used for making Priority Queues, as well as Graph Traversals. There are mainly two types:
+* Max Binary Heap: 
+    - In this heap, the parent nodes are always larger than the child nodes. 
+    - Each parent has at most, two child nodes.
+    - No defined relationship between sibling nodes.
+* Min Binary Heap: The parent node is always smaller than the child nodes.
+
+The way a heap works, is that it is flattened and stored in an array, with defined indices (no nodes are created). For any parent node with the index of n, the left child is stored at index 2n + 1, while the right child is stored at index 2n + 2. Also, for any child node, the parent is stored at `Math.floor((n - 1)/2)`.
+
+To insert into the queue, the item is pushed to the end of the array, and then bubbled-up to its appropriate position in the heap. For removal, the root is shifted from the queue, the last item is swapped to the root position, then sunk-down to its appropriate position.
+
+### Priority Queue
+This is a data structure where every element is assigned a priority level, and those with higher priorities are removed from the queue first. It can be implemented with an array or a linked list, but it would not be the best, because this would yield a time complexity of O(n). A heap is more ideal for implementing a PQ, because it has a logarithmic time of O(log n). A Min Binary Heap is used, because a lower number has a greater priority over a higher number.
