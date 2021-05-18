@@ -166,3 +166,11 @@ To insert into the queue, the item is pushed to the end of the array, and then b
 
 ### Priority Queue
 This is a data structure where every element is assigned a priority level, and those with higher priorities are removed from the queue first. It can be implemented with an array or a linked list, but it would not be the best, because this would yield a time complexity of O(n). A heap is more ideal for implementing a PQ, because it has a logarithmic time of O(log n). A Min Binary Heap is used, because a lower number has a greater priority over a higher number.
+
+### Hash Tables/Maps
+A hash table is a data structure that stores data in key-value pairs. Every programming language has its own built-in implementation of a hash map; Javascript has objects, Python has dictionaries etc. Virtually all operations carried out with a hash map are fast and efficient.
+
+To look up a value using a key, that key needs to be converted into an index that represents that value. A **hash function** is used to make this conversion. A basic hash function takes in data (key) of arbitrary sizes and always outputs a number (index) of a fixed size. A gpod hash function (for hash table purposes) should hash different data types, should operate with constant time O(1) and should distribute the numbers outputted uniformly to avoid collisions. Using prime numbers in the calculations helps to prevent collisions. When there are collisions, two different approaches are used to solve them:
+- Separate Chaining: the keys with the same index are stored at the same position, in a nested structure, within the same container (object or array, depending on what's being used) and looped over whenever an item needs to be retrieved from that same index.
+- Linear probing: if an index has already been assigned to a key, the next available index is located and assigned to the colliding key.
+Hash tables generally have constant time O(1) for adding, removing and accessing key-value pairs.
