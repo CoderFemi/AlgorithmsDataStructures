@@ -174,3 +174,15 @@ To look up a value using a key, that key needs to be converted into an index tha
 - Separate Chaining: the keys with the same index are stored at the same position, in a nested structure, within the same container (object or array, depending on what's being used) and looped over whenever an item needs to be retrieved from that same index.
 - Linear probing: if an index has already been assigned to a key, the next available index is located and assigned to the colliding key.
 Hash tables generally have constant time O(1) for adding, removing and accessing key-value pairs.
+
+### Graphs
+Graphs are a group of nodes with connections between them. In contrast with a tree, a graph does not have any root node, nor is there any parent-child relationship between the nodes. The nodes are connected in any haphazard, random way possible. Also, a tree which is in theory, also a graph, only has one pathway from one node to another. Vertices on a graph have multiple pathways from one node to another. Graphs are used for social networks, mapping, routing and so many other applications.
+Graph Terminology:
+- Vertex: A name for a node on the graph
+- Edge: A connection between one vertex and the other.
+- Undirected Graph: In this type of graph, there is a two-way connection between two vertices. Facebook friendships are an example.
+- Directed Graph: Here, there is a specified one-way connection between vertices, depicted with an arrow, showing the direction of the relationship. Instagram or twitter followership is an example here. It becomes a two-way relationship only if two people are following each other.
+- Weighted Graph: The edges are assigned a value. For a map, this would be the distance between two locations. In an unweighted graph, the edges have no value.
+Graphs are stored using either an Adjacency Matrix, or an Adjacency List. The latter can be improved upon by using strings as keys (hash table) instead of indexes, and store the adjacent values in an array. For storing and traversing the vertices, an AL is more efficient. For querying edges, an AM is more efficient.
+
+Graph Traversal is done using Depth First Search or Breadth First Search. As already seen with trees, either method is used depending on how compacted the graph is in its depth or breadth.
