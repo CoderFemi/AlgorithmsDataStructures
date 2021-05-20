@@ -67,6 +67,22 @@ const fib = (num) => {
     return helper(num)
 }
 
+// Refactored with an IIFE
+const fib = (num) => {
+    let prev = 0
+    let next = 1
+    let temp = 0
+    let n = 1
+    return (function helper(num) {
+        if (n === num) return next
+        n++
+        temp = next
+        next += prev
+        prev = temp
+        return helper(num)
+    })(num)
+}
+
 // SHORTER IMPLEMENTATION
 function fib(n) {
     if (n <= 2) return 1;

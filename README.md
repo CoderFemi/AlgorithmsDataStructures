@@ -15,14 +15,15 @@ The above yardsticks differ in various circumstances, from one computer to anoth
 - O(log n) = constant logarithmic complexity
 - O(n) = linear complexity
 - O(n log n) = linear logarithmic complexity
-- O(n^2) = exponential complexity
+- O(n^2) = quadratic complexity
+- O(2^n) = exponential complexity
 
 ### Time Complexity
-*How fast?* Instead of analysing a logarithm by the amount of time it takes to run, it is better to use *the number of operations* contained in each code. For example, a one-liner statement that uses a few mathematical operations to derive an output, would be much more efficient than a loop, because the number of operations required to run the loop increases exponentially or proportionally to the value of n i.e. the number of iterations.
+*How fast?* Instead of analysing a logarithm by the amount of time it takes to run, it is better to use *the number of operations* contained in each code. For example, a one-liner statement that uses a few mathematical operations to derive an output, would be much more efficient than a loop, because the number of operations required to run the loop increases proportionally to the value of n i.e. the number of iterations.
 
 1. `O(1)` An algorithm has a runtime of O(1) if the number of operations required to execute remain constant as n grows. This is usually the case with a one-line expression with a few mathematical operations.
 2. `O(n)` If the number of operations required grow in proportion to the input n, then the algorithm has O(n). This is the case with a loop, where the number of times the code block is executed increases as the number of iterations - n - increases. **A linear relationship** between input and runtime involving a roughly proportionate increase.
-3. `O(n^2)` When the number of operations increase by n^2, then we have a O(n^2). This is the case for a two-level nested loop. This is an **exponential/quadratic curve relationship**, where runtime increases by n^2.
+3. `O(n^2)` When the number of operations increase by n^2, then we have a O(n^2). This is the case for a two-level nested loop. This is a **quadratic curve relationship**, where runtime increases by n^2.
 
 Rules of Thumb for analysing time complexity of algorithms:
 - Constants don't matter. O(2n) is the same as O(n), O(500) is the same as O(1).
@@ -186,3 +187,18 @@ Graph Terminology:
 Graphs are stored using either an Adjacency Matrix, or an Adjacency List. The latter can be improved upon by using strings as keys (hash table) instead of indexes, and store the adjacent values in an array. For storing and traversing the vertices, an AL is more efficient. For querying edges, an AM is more efficient.
 
 Graph Traversal is done using Depth First Search or Breadth First Search. As already seen with trees, either method is used depending on how compacted the graph is in its depth or breadth.
+
+### Dijkstra's Algorithm
+Edsgar Dijkstra was a Dutch programmer who pioneered, influenced and created new disciplines in Computer Science and is known for a lot of algorithms, the most popular and widely used of which is the Disktra's Algorithm.
+
+The algorithm finds the shortest path from one point to another. On a graph, this is the shortest combination of edges between two vertices. This algorithm is applicable in everyday life in the form of GPS routing, network routing, airline ticketing (shortest route to your destination) etc.
+
+## DYNAMIC PROGRAMMING
+Is an approach developed by Richard Bellman for solving some specific complex problems by breaking down a problem into simpler subproblems, solving those problems **only once** and storing their solutions. 
+**Features of dynamic programming (when should it be used?)**:
+- **Over-lapping Subproblems**: The first use case for dynamic programming is where the subproblems are overlapping, i.e. they are calculated over and over again. A good example where this would be applicable is with a fibonnaci sequence implemented recursively, where a set of two numbers are summed up more than once. As n grows, the number of times the function is called grows exponentially O(2^n). To solve this with dynamic programming, would be to store the solution for one fibonnaci sequence in a variable, and when it is needed, reference is simply made to that variable, instead of calculating it over again. This process is called **memoization**. An example which does not need dynamic programming is the merge sort, using the divide and conquer pattern. Each array broken down is unique and there is no repetition.
+- **Optimal Substructure**: A problem has an optimal substructure when the optimal solution for it can be derived from a combination of the optimal solutions for its subproblems.
+
+Memoization is the process of storing the results of expensive function calls and returning the cached result when the same inputs occur again. Implenting recursion with memoization drastically improves time complexity from exponential time - O(2^n) to linear time - O(n).
+
+Tabulation, on the other hand is a bottom-up approach, implemented non-recursively. An array stores the results of each fibonnaci sequence. The array is looped over and the two previous results are added together to give the current fibonnaci value.
