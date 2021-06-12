@@ -5,7 +5,7 @@ const fib = (n, memo = []) => {
     const result = fib(n - 1, memo) + fib(n - 2, memo)
     memo[n] = result
     return result
-}
+} 
 
 // Implemented with tabulation
 const fib = (n) => {
