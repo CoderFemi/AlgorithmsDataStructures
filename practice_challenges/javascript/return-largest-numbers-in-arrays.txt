@@ -1,0 +1,18 @@
+function largestOfFour(arr) {
+  const longestNumbers = []
+  for (let i = 0; i < arr.length; i++) {
+    const longest = arr[i].reduce((a,b) => {
+      return Math.max(a,b)
+    })
+    longestNumbers.push(longest)
+  }
+  // const longestNumbers = arr.map((subArr) => {
+  //   return subArr.reduce((a,b) => {
+  //     return Math.max(a,b)
+  //   })
+  // })
+  return longestNumbers;
+}
+
+const result = largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);
+console.log(result)

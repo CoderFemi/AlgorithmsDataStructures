@@ -1,0 +1,60 @@
+function convertToRoman(num) {
+  let [units, fives, tens, fifties, hundreds, fiveHundreds, thousands] = ['I','V','X','L','C','D','M']
+
+  const roman = num.toString().split('').reverse().map((letter, index) => {
+     const digit = parseInt(letter)
+     if (index === 0) {
+       if (digit === 0) {
+         return ''
+       } else if (digit < 4) {
+         return units.repeat(digit)
+       } else if (digit === 4) {
+         return units + fives
+       } else if (digit === 5) {
+         return fives
+       } else if (digit < 9) {
+         return fives + units.repeat(digit - 5)
+       } else if (digit === 9) {
+         return units + tens
+       }
+     } else if (index === 1) {
+       if (digit === 0) {
+         return ''
+       } else if (digit < 4) {
+         return tens.repeat(digit)
+       } else if (digit === 4) {
+         return tens + fifties
+       } else if (digit === 5) {
+         return fifties
+       } else if (digit < 9) {
+         return fifties + tens.repeat(digit - 5)
+       } else if (digit === 9) {
+         return tens + hundreds
+       }
+     } else if (index === 2) {
+       if (digit === 0) {
+         return ''
+       } else if (digit < 4) {
+         return hundreds.repeat(digit)
+       } else if (digit === 4) {
+         return hundreds + fiveHundreds
+       } else if (digit === 5) {
+         return fiveHundreds
+       } else if (digit < 9) {
+         return fiveHundreds + hundreds.repeat(digit - 5)
+       } else if (digit === 9) {
+         return hundreds + thousands
+       }
+     } else if (index === 3) {
+       if (digit === 0) {
+         return ''
+       } else if (digit < 4) {
+         return thousands.repeat(digit)
+       } 
+     }
+  })
+  
+ return roman.reverse().join('');
+}
+
+console.log(convertToRoman(3999))

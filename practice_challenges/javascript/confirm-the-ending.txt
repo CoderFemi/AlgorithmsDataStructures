@@ -1,0 +1,8 @@
+function confirmEnding(str, target) {
+  
+  const subString = str.substr(-target.length)
+  return subString === target
+}
+
+const result = confirmEnding("Congratulation", "on");
+console.log(result)

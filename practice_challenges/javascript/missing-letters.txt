@@ -1,0 +1,14 @@
+function fearNotLetter(str) {
+  
+  const strArray = [...str]
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('')
+  const fullSlice = alphabet.slice(alphabet.indexOf(str[0]), alphabet.indexOf(str[str.length-1])+1)
+  const newArr = fullSlice.concat(strArray)
+  if (strArray.length === alphabet.length) {
+    return undefined
+  } else {
+    return newArr.filter((item) => !(fullSlice.includes(item) && strArray.includes(item))).toString()
+  }
+}
+
+console.log(fearNotLetter("abce"))

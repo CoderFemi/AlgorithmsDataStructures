@@ -1,0 +1,12 @@
+function translatePigLatin(str) {
+  const consonant = str.match(/[^aeiou]+/)
+  const vowel = str[0].match(/[aeiou]/)
+  if (vowel) {
+    return str.concat('way')
+  } else {
+    return str.substr(consonant[0].length).concat(consonant[0], 'ay')
+  }
+}
+
+const result = translatePigLatin("consonant");
+console.log(result)

@@ -1,0 +1,11 @@
+function myReplace(str, before, after) {
+  const letter = before.charAt(0)
+  if (letter === letter.toUpperCase()) {
+    return str.replace(before, after.charAt(0).toUpperCase().concat(after.substr(1)))
+  } else {
+    return str.replace(before, after)
+  }
+}
+
+const result = myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
+console.log(result)

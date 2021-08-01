@@ -1,0 +1,18 @@
+function rot13(str) {
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let cipher = ''
+  for (let i = 0; i < str.length; i++) {
+    const index = alphabet.indexOf(str[i])
+    if (index < 0) {
+      cipher += str[i]
+    } else if (index <= 12) {
+      cipher += alphabet[index+13]
+    } else if (index > 12) {
+      cipher += alphabet[index-13]
+    }  
+  }
+  return cipher;
+}
+
+const result = rot13("Z!");
+console.log(result)

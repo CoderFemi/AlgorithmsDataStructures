@@ -1,0 +1,19 @@
+function destroyer(arr) {
+  const newArr = Object.values(arguments)
+  const arr1 = newArr[0]
+  const arr2 = newArr.slice(1)
+  const arr3 = [...arr1]
+  
+  arr1.forEach((item) => {
+    arr2.forEach((val) => {
+      if (item === val) {
+        arr3.splice(arr3.indexOf(item), 1)
+      }
+    })
+  })
+  return arr3
+ 
+}
+
+const result = destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+console.log(result)

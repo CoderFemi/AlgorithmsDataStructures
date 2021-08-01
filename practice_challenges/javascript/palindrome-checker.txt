@@ -1,0 +1,11 @@
+function palindrome(str) {
+  const filteredArray =  str.match(/[A-Za-z0-9]/g)
+  const filteredString = filteredArray.join('').toLowerCase()
+  const reversedString = filteredArray.concat([]).reverse().join('').toLowerCase()
+  return reversedString === filteredString
+
+}
+
+
+
+console.log(palindrome("0_0 (: /-\ :) 0-0"))

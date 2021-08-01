@@ -1,0 +1,18 @@
+function whatIsInAName(collection, source) {
+  const arr = []
+  // Only change code below this line
+  const srcKeys = Object.keys(source)
+  for (let obj of collection) {
+    const bool = srcKeys.every((key) => obj[key] === source[key])
+    if (bool) {
+      arr.push(obj)
+    }
+  }
+
+  // Only change code above this line
+  return arr;
+}
+
+const result = whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+console.log(result)

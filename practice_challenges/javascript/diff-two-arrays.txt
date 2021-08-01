@@ -1,0 +1,8 @@
+function diffArray(arr1, arr2) {
+  const newArr = arr1.concat(arr2)
+  return newArr.filter((item) => !(arr1.includes(item) && arr2.includes(item)))
+  //return newArr
+}
+
+const result = diffArray([1, "calf", 3, "piglet"], [1, "calf", 3, 4]);
+console.log(result)

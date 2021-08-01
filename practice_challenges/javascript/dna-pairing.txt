@@ -1,0 +1,20 @@
+function pairElement(str) {
+  const newArray = []
+  
+  for (let i = 0; i < str.length; i++) {
+    
+    if (str[i] === 'A') {
+      newArray.push(['A', 'T'])
+    } else if (str[i] === 'T') {
+      newArray.push(['T', 'A'])
+    } else if (str[i] === 'C') {
+      newArray.push(['C', 'G'])
+    } else if (str[i] === 'G') {
+      newArray.push(['G', 'C'])
+    }
+    
+  }
+  return newArray;
+}
+
+console.log(pairElement("GCG"))

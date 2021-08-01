@@ -1,0 +1,15 @@
+function sumFibs(num) {
+
+  const newArr = [1,1]
+  
+  for (let i = 2; i < num; i++) {
+    
+    if (newArr[newArr.length-1] <= num) {
+      newArr.push(newArr[newArr.length-1]+newArr[newArr.length-2])
+    }
+  }
+  console.log(newArr)
+  return newArr.filter((item) => item % 2 === 1 && item <= num).reduce((sum, num) => sum + num, 0)
+}
+
+console.log(sumFibs(4))

@@ -1,0 +1,11 @@
+function sumAll(arr) {
+  const newArr = [...arr]
+  newArr.sort((a,b) => a - b)
+  for (let i = 1; i < newArr[newArr.length-1]-newArr[0]; i++) {
+    newArr.splice(i, 0, newArr[0] + i)
+  }
+  return newArr.reduce((sum, num) => sum + num, 0)
+}
+
+const result = sumAll([4, 1]);
+console.log(result)

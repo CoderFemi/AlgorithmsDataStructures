@@ -1,0 +1,21 @@
+function smallestCommons(arr) {
+
+  const newArr = [...arr]
+  newArr.sort((a,b) => a - b)
+  for (let i = 1; i < newArr[newArr.length-1]-newArr[0]; i++) {
+    newArr.splice(i, 0, newArr[0] + i)
+  }
+  const highestMultiple = newArr.reduce((sum, num) => sum * num, 1)
+  const multiple = []
+  for (let i = 1; i <= highestMultiple; i++) {
+    const test = newArr.every((num) => i % num === 0)
+    if (test) {
+      multiple.push(i)
+    }
+  }
+  return multiple[0]
+}
+
+
+const result = smallestCommons([1,5]);
+console.log(result)

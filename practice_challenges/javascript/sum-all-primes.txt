@@ -1,0 +1,21 @@
+function sumPrimes(num) {
+
+  const divisors = []
+  const newArr = []
+  let i = 2
+  while (i <= num) {
+    divisors.push(i)
+    i++
+  }
+  
+  divisors.forEach((divisor, index) => {
+  const primeRange = divisors.slice(0, index)
+  const bool = primeRange.every((item) => divisor % item !== 0 )
+  if (bool) {
+    newArr.push(divisor) 
+  }
+  })
+  return newArr.reduce((sum, num) => sum + num, 0)
+}
+
+console.log(sumPrimes(20))
