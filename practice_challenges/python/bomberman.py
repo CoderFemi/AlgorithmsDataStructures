@@ -2,11 +2,8 @@ import time
 
 
 def bomberMan(n, grid):
-    if n < 3:
-        return grid
 
     NUM_ROWS = len(grid)
-
     grid_all_bombs = [row.replace('.', 'O') for row in grid]
 
     def mark_for_detonation(grid):
@@ -48,9 +45,6 @@ def bomberMan(n, grid):
                     if len(next_row) > 0:
                         grid[row_index + 1] = ''.join(next_row)
 
-            # current_row = grid[row_index].replace('.', 'O')
-            # grid[row_index] = current_row
-
         return grid
 
     def detonate(grid):
@@ -62,15 +56,6 @@ def bomberMan(n, grid):
 
         return grid
 
-    # def reset(grid):
-    #     for row_index in range(len(grid)):
-    #         row = grid[row_index].replace('O', '.')
-    #         row = row.replace('X', '.')
-    #         row = row.replace('Y', 'O')
-    #         grid[row_index] = row
-
-    #     return grid
-
     # print(*grid, sep='\n')
     # print('===================')
     # grid = mark_for_detonation(grid)
@@ -80,14 +65,10 @@ def bomberMan(n, grid):
     # print(*grid, sep='\n')
 
     start = int(time.time())
-    print(start)
     timeout = start + n
     time.sleep(1)
 
     while True:
-        print(grid, int(time.time()))
-        # if int(time.time()) == timeout:
-        #     break
         time.sleep(1)
         marked_grid = mark_for_detonation(grid)
         grid = grid_all_bombs
@@ -101,28 +82,6 @@ def bomberMan(n, grid):
         if int(time.time()) == timeout:
             break
 
-    # start = int(time.perf_counter())
-    # time.sleep(2)
-    # planted = False
-    # if int(time.perf_counter()) == start + 2:
-    #     grid = mark_for_detonation(grid)
-    #     planted = True
-
-    # while int(time.perf_counter()) <= start + n:
-    #     time_to_detonate = (int(time.perf_counter()) - start) % 3 == 0
-    #     time_to_plant = (int(time.perf_counter()) - start) % 3 == 1
-
-    #     if time_to_detonate:
-    #         grid = detonate(grid)
-    #         planted = False
-    #     elif time_to_plant:
-    #         grid = mark_for_detonation(grid)
-    #         planted = True
-
-    #     if planted and int(time.perf_counter()) == start + n:
-    #         grid = reset(grid)
-
-    print(int(time.time()))
     return grid
 
 
@@ -132,5 +91,5 @@ input_grid2 = ['.......', '..O.O..', '.......']
 output_grid = ['OOO.OOO', 'OO...OO',
                'OOO...O', '..OO.OO', '...OOOO', '...OOOO']
 
-result = bomberMan(5, input_grid)
+result = bomberMan(3, input_grid)
 print(result)
