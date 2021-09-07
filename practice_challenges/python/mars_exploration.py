@@ -4,15 +4,15 @@ def marsExploration(str) -> int:
     difference = 0
     start = 0
     while start < len(str):
-        received_one = str[start]
-        received_two = str[start + 1]
-        received_three = str[start + 2]
+        char_one = str[start]
+        char_two = str[start + 1]
+        char_three = str[start + 2]
         
-        if received_one != signal[0]:
+        if char_one != signal[0]:
             difference += 1
-        if received_two != signal[1]:
+        if char_two != signal[1]:
             difference += 1
-        if received_three != signal[2]:
+        if char_three != signal[2]:
             difference += 1
         
         start += 3
