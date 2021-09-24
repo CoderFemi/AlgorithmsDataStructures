@@ -266,7 +266,7 @@ def steadyGene(gene) -> int:
 
     index = 0
     begin_index = 0
-    # begin = False
+    begin = False
     end_index = 0
     temp_count = excess_char_count
 
@@ -274,9 +274,9 @@ def steadyGene(gene) -> int:
         current_char = gene[index]
         if current_char in excess_chars:
             temp_count -= 1
-            # if not begin:
-            #     begin_index = index
-            #     begin = True
+            if not begin:
+                begin_index = index
+                begin = True
 
         if temp_count == 0:
             end_index = index + 1
@@ -287,14 +287,13 @@ def steadyGene(gene) -> int:
 
             index = begin_index
 
-            begin_index += 1
-            # begin = False
+            begin_index = 0
+            begin = False
             end_index = 0
             temp_count = excess_char_count
 
         if end_index > gene_len:
             break
-
         index += 1
 
     print(gene_len, num_genes)
