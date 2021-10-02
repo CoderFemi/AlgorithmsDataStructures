@@ -19,8 +19,6 @@ def gridSearch(grid, pattern):
             if grid_row.startswith(pattern_row, index)
         ]
 
-        # print(grid_index, pattern_index, prev_matches, current_matches)
-
         if not first_match_occurred and len(current_matches) > 0:
             first_match_occurred = True
             prev_matches = current_matches
@@ -28,7 +26,7 @@ def gridSearch(grid, pattern):
         for index in current_matches:
             if index in prev_matches:
                 temp_matches.append(index)
-        # print(temp_matches)
+
         prev_matches = temp_matches
 
         if len(temp_matches) > 0:
